@@ -1,18 +1,27 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+  	extend: {
+  		fontFamily: {
+  			ubuntu: [
+  				'var(--font-ubuntu)'
+  			]
+  		},
+  		colors: {
+  			primary: "#232323",
+        secondary: "#4F4F4F",
+        accent: "#A7A7A7",
+        background: "#111111",
+        offwhite: "#EEEEEE"
+  		},
+  	}
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
